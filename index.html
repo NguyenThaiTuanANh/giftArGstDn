@@ -137,9 +137,9 @@
         var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/ArGiftGst.loader.js";
+        const loaderUrl = buildUrl + "/GiftArGst.ico.loader.js";
         const config = {
-            dataUrl: buildUrl + "/a8f29ec95b07129e7a3224e440f68701.data.br",
+            dataUrl: buildUrl + "/3e49ece8142d01c5bbc430262261abb2.data.br",
             frameworkUrl: buildUrl + "/12d2e1469688b9a820cdc778597b066f.js.br",
             codeUrl: buildUrl + "/91d4cc84a0bb2909b836b4b62aaa52ce.wasm.br",
             streamingAssetsUrl: "StreamingAssets",
@@ -149,10 +149,7 @@
         //Useful when used along with Filename as Hashes option
             cacheControl: function (url) {
             // typically includes: .data, .bundle, .zpt
-            if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "immutable";
-}
-   
+            ZAPPAR_WEBGL_CACHING   
             if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
                 return "immutable";
             }   
@@ -184,7 +181,7 @@
         //script.onload = () => { CreateUnityLoader();   };
         document.body.appendChild(script);
 
-        window.zappar.permission_request_ui_promise().then(WaitForZCVLoad);
+        ZAPPAR_PERMISSIONS_IMPLEMENTATION
 
         function WaitForZCVLoad() {
             if (zappar.loaded()) {
